@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { FirstComponent } from './first.component';
 import { AppComponent } from './app.component';
+import { AnimalComponent } from "./shared/animal/animal.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FirstComponent,
+    AnimalComponent
   ],
   imports: [
     BrowserModule,

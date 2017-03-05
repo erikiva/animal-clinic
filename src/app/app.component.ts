@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  user:any = {
+    name: 'John',
+    surname: 'Smith'
+  }
+  title = 'Animals';
+  onDelete(name){
+    alert(`Borrado ${name}`);
+  }
 }

@@ -1,0 +1,34 @@
+<form #form="ngForm" (ngSubmit)="save(form.value)" novalidate>
+    <md-input-container>
+        <input type="text" mdInput placeholder="Name" 
+            name="name" [ngModel]="animal?.name" #name="ngModel"
+            required minLength="4">
+            <md-hint *ngIf="!name.pristine && !name.valid">
+                <span [hidden]="!name.errors?.required">Name is required</span>
+                <span [hidden]="!name.errors?.minLength">Min length 4</span>
+            </md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input type="text" mdInput placeholder="Photo" 
+            name="photo" [ngModel]="animal?.photo"
+            required [ngModel]="animal?.photo" #photo="ngModel">
+        <md-hint *ngIf="!photo.pristine && !photo.valid">
+            <span [hidden]="!photo.errors?.required">Photo is required</span>
+        </md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input type="number" mdInput placeholder="Age" 
+            name="age"  [ngModel]="animal?.age"
+            required [ngModel]="animal?.age" #age="ngModel">
+        <md-hint *ngIf="!age.pristine && !age.valid">
+            <span [hidden]="!age.errors?.required">Age is required</span>
+        </md-hint>
+    </md-input-container>
+    <md-select placeholder="Animal type"  name="type"  
+            [ngModel]="animal?.type" required>
+        <md-option *ngFor="let type of ['cat', 'dog', 'squirrel', 'hamster']" [value]="type">
+            {{type}}
+        </md-option>
+    </md-select>
+    <button type="submit" md-raised-button [disabled]="!form.valid">Save</button>
+</form>

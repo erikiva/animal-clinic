@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AnimalModel } from './../../models/animal.model';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'animal',
@@ -6,11 +7,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./animal.component.css']
 })
 export class AnimalComponent {
-    animal:any = {
-        name: 'Irish',
-        type: 'Cat',
-        age: '36',
-        photo: 'https://www.purina.com/media/629502/seo-article-23-list-grid.jpg'
-    }
+    format: string = 'MM/dd/yyyy HH:mm';
+    @Input('animalContent')animal:AnimalModel;
+    @Output() onDelete:EventEmitter<AnimalModel> = new EventEmitter;
 
+    constructor(){}
+    delete(){
+        this.onDelete.emit(this.animal);
+    }
 }

@@ -1,8 +1,18 @@
 <h1>
   {{title}}
 </h1>
-<animal></animal>
-
+<animal-form></animal-form>
+<div *ngIf="animals?.length > 0">
+<animal 
+    addBorder (mouseLeave)="exit($event)"
+      [color]="par ? 'red' : 'green'"  
+    [class.even]="par" 
+    *ngFor="let animal of animals; let par = even" 
+  [animalContent]="animal" (onDelete)="onDelete($event)"></animal>
+</div>
+<div *ngIf="!animals || animals.length === 0">
+  No Animals!
+</div>
 <!--
 <input type="text" [(ngModel)]="user.name" />
 <first [name]="user.name" [surname]="user.surname" 

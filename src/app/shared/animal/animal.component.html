@@ -1,8 +1,16 @@
 
-<img src="{{animal.photo}}" alt="{{animal.name}}" />
-<div class="info">
-    <h3>{{animal.name}}</h3>
-    <p class="type">Species: {{animal.type}}</p>
-    <p class="age">Age: {{animal.age}} months</p>
-</div>
-<div class="clear"></div>
+<md-card class="example-card">
+  <md-card-header>
+      <h3>{{animal.name}}</h3>
+  </md-card-header>
+  <img md-card-image [src]="animal.photo" [alt]="animal.name" />
+  <md-card-content>
+    Type is: {{animal.type}}
+    Age is: {{animal.age | formatMonth}} 
+    Register Date: {{animal.creationDate | date:format }}
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>Edit</button>
+    <button md-button (click)="delete()">Delete</button>
+  </md-card-actions>
+</md-card>

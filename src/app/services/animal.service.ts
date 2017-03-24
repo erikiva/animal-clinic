@@ -10,11 +10,12 @@ export abstract class IAnimalService {
 
 @Injectable()
 export class AnimalService  implements IAnimalService{
-    nextId: number = 3;
+    nextId: number = 4;
     animals: AnimalModel[] = [
-            new AnimalModel('Cillas', 'Squirrel', 'http://pixel.nymag.com/imgs/fashion/daily/2016/10/04/04-squirrel-nut.w710.h473.2x.jpg', 22, new Date(), 1),
-            new AnimalModel('Irish','Cat','https://www.purina.com/media/629502/seo-article-23-list-grid.jpg',36, new Date(),    2)];
-     title = 'Animals';
+            new AnimalModel('Cillas', 'squirrel', 'http://pixel.nymag.com/imgs/fashion/daily/2016/10/04/04-squirrel-nut.w710.h473.2x.jpg', 22, new Date(), 1),
+            new AnimalModel('Irish','cat','https://www.purina.com/media/629502/seo-article-23-list-grid.jpg',36, new Date(),    2),
+            new AnimalModel('Kissa', 'cat', 'http://s2.thingpic.com/images/5r/29XeRSuZg63T4nfN24t2ceYK.png', 54, new Date(), 3)];
+     
 
     constructor(@Inject(API_CONFIG) private apiConfig){
 

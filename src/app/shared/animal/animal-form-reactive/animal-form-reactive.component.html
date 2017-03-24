@@ -1,0 +1,27 @@
+<form (ngSubmit)="save()" [formGroup]="form" novalidate>
+    <md-input-container>
+        <input type="text" mdInput placeholder="Name" name="name" formControlName="name">
+            <md-hint *ngIf="!form.controls.name.pristine && !form.controls.name.valid">
+                <span [hidden]="!form.controls.name.errors?.required">Name is required</span>
+                <span [hidden]="!form.controls.name.errors?.minlength">Min length 4</span>
+            </md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input type="text" mdInput placeholder="Photo" name="photo"  formControlName="photo">
+        <md-hint *ngIf="!form.controls.photo.pristine && !form.controls.photo.valid">
+            <span [hidden]="!form.controls.photo.errors?.required">Photo is required</span>
+        </md-hint>
+    </md-input-container>
+    <md-input-container>
+        <input type="number" mdInput placeholder="Age" name="age"  formControlName="age">
+        <md-hint *ngIf="!form.controls.age.pristine && !form.controls.age.valid">
+            <span [hidden]="!form.controls.age.errors?.required">Age is required</span>
+        </md-hint>
+    </md-input-container>
+    <md-select placeholder="Animal type"  name="type"  formControlName="type">
+        <md-option *ngFor="let type of ['cat', 'dog', 'squirrel', 'hamster']" [value]="type">
+            {{type}}
+        </md-option>
+    </md-select>
+    <button type="submit" md-raised-button [disabled]="">Save</button>
+</form>

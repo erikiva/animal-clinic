@@ -10,9 +10,13 @@ export class AnimalComponent {
     format: string = 'MM/dd/yyyy HH:mm';
     @Input('animalContent')animal:AnimalModel;
     @Output() onDelete:EventEmitter<AnimalModel> = new EventEmitter;
-
+    @Output() onEdit: EventEmitter<AnimalModel> = new EventEmitter;
     constructor(){}
     delete(){
         this.onDelete.emit(this.animal);
+    }
+
+    edit(){
+        this.onEdit.emit(this.animal);
     }
 }

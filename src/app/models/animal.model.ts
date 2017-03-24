@@ -10,7 +10,7 @@ export class  AnimalModel {
     }
 
     static createAnimalByObject(obj:any) {
-        return new AnimalModel(obj.name, obj.type, obj.photo, obj.age)
+        return new AnimalModel(obj.name, obj.type, obj.photo, obj.age);
     }
 }
 

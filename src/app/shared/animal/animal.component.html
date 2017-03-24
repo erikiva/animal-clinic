@@ -10,7 +10,7 @@
     Register Date: {{animal.creationDate | date:format }}
   </md-card-content>
   <md-card-actions>
-    <button md-button>Edit</button>
+    <button md-button (click)="edit()">Edit</button>
     <button md-button (click)="delete()">Delete</button>
   </md-card-actions>
 </md-card>

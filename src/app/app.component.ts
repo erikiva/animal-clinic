@@ -11,10 +11,15 @@ import { Component, ElementRef } from '@angular/core';
 
 export class AppComponent {
   animals: AnimalModel[];
+  animalEdit: AnimalModel;
     constructor(private animalService: AnimalService){
       this.animals = this.animalService.get();
     }
+    title = 'Animals';
+    onEdit(animal:AnimalModel) {
+      this.animalEdit = animal;
 
+    }
 
     onDelete(animal: AnimalModel){
       this.animalService.delete(animal.id);

@@ -5,7 +5,7 @@ import { AnimalService } from './services/animal.service';
 import { FormatMonthPipe } from './shared/format-month-pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material'
 import { FirstComponent } from './first.component';
@@ -28,7 +28,8 @@ import { AddBorderDirective } from "./shared/add-border-directive";
     BrowserModule,
     FormsModule,
     HttpModule, 
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     AnimalService,
